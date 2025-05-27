@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://88n64osg4qwf"]
+
+[ext_resource type="Texture2D" uid="uid://o20gn6r2y7t2" path="res://Assets/Plateau d'échec.png" id="1_88icb"]
+
+[node name="Board" type="Sprite2D"]
+texture = ExtResource("1_88icb")
+
+[node name="Pieces" type="Node2D" parent="."]
+
+[node name="Dots" type="Node2D" parent="."]
