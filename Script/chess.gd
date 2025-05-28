@@ -5,21 +5,24 @@ const CELL_WIDTH = 100
 
 const TEXTURE_HOLDER = preload("res://Scenes/texture_holder.tscn")
 
-const BISHOP_BLACK = preload("res://Assets/Pieces/Black/bishop_black.png")
-const KING_BLACK = preload("res://Assets/Pieces/Black/king_black.png")
-const KNIGHT_BLACK = preload("res://Assets/Pieces/Black/knight_black.png")
-const PAWN_BLACK = preload("res://Assets/Pieces/Black/pawn_black.png")
-const QUEEN_BLACK = preload("res://Assets/Pieces/Black/queen_black.png")
-const ROOK_BLACK = preload("res://Assets/Pieces/Black/rook_black.png")
-const BISHOP_WHITE = preload("res://Assets/Pieces/White/bishop_white.png")
-const KING_WHITE = preload("res://Assets/Pieces/White/king_white.png")
-const KNIGHT_WHITE = preload("res://Assets/Pieces/White/knight_white.png")
-const PAWN_WHITE = preload("res://Assets/Pieces/White/pawn_white.png")
-const QUEEN_WHITE = preload("res://Assets/Pieces/White/queen_white.png")
-const ROOK_WHITE = preload("res://Assets/Pieces/White/rook_white.png")
+var PAWN_WHITE
+var KNIGHT_WHITE
+var BISHOP_WHITE
+var ROOK_WHITE
+var QUEEN_WHITE
+var KING_WHITE
 
+var PAWN_BLACK
+var KNIGHT_BLACK
+var BISHOP_BLACK
+var ROOK_BLACK
+var QUEEN_BLACK
+var KING_BLACK
 
-const MOUVPIECE = preload("res://Assets/Mouvpiece.png")
+var boardBeforeMove =  []
+var deadPiece = []
+
+var MOUVPIECE = preload("res://Assets/Mouvpiece.png")
 
 @onready var pieces = $Pieces
 @onready var dots = $Dots
@@ -62,6 +65,9 @@ func _ready():
 	board.append([-1, -1, -1, -1, -1, -1, -1, -1])
 	board.append([-4, -2, -3, -5, -6, -3, -2, -4])
 	
+	for row in board:
+		boardBeforeMove.append(row.duplicate(true))
+	
 	display_board()
 	
 	var white_buttons = get_tree().get_nodes_in_group("white_pieces")
@@ -77,17 +83,19 @@ func _ready():
 	black_pieces.visible = false
 	
 func _input(event):
-	if event is InputEventMouseButton && event.pressed && promotion_square == null:
+	if event is InputEventMouseButton && event.pressed && promotion_square == null && GlobalValue.MenuGame == false:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if is_mouse_out(): return
 			var var1 = snapped(get_global_mouse_position().x, 0) / CELL_WIDTH
 			var var2 = abs(snapped(get_global_mouse_position().y, 0)) / CELL_WIDTH
-			print(var1, var2)
 			if !state && (white && board[var2][var1] > 0 || !white && board[var2][var1] < 0):
 				selected_piece = Vector2(var2, var1)
 				show_options()
 				state = true
-			elif state: set_move(var2, var1)
+			elif state: 
+				set_move(var2, var1)
+				
+			
 			
 func is_mouse_out():
 	if get_global_mouse_position().x < 0 || get_global_mouse_position().x > 800 || get_global_mouse_position().y > 0 || get_global_mouse_position().y < -800 : return true
@@ -96,6 +104,36 @@ func is_mouse_out():
 func display_board():
 	for child in pieces.get_children():
 		child.queue_free()
+	
+	if GlobalValue.GodSelectedPlayer1 == "GodAnyPower":
+		PAWN_WHITE = preload("res://Assets/Pieces/White/pawn_white.png")
+		KNIGHT_WHITE = preload("res://Assets/Pieces/White/knight_white.png")
+		BISHOP_WHITE = preload("res://Assets/Pieces/White/bishop_white.png")
+		ROOK_WHITE = preload("res://Assets/Pieces/White/rook_white.png")
+		QUEEN_WHITE = preload("res://Assets/Pieces/White/queen_white.png")
+		KING_WHITE = preload("res://Assets/Pieces/White/king_white.png")
+	if GlobalValue.GodSelectedPlayer1 == "GodOfDeath":
+		PAWN_WHITE = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Pion.png")
+		KNIGHT_WHITE = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Cavalier.png")
+		BISHOP_WHITE = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Fou.png")
+		ROOK_WHITE = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Tour.png")
+		QUEEN_WHITE = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Reine.png")
+		KING_WHITE = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Roi.png")
+
+	if GlobalValue.GodSelectedPlayer2 == "GodAnyPower":
+		PAWN_BLACK = preload("res://Assets/Pieces/Black/pawn_black.png")
+		KNIGHT_BLACK = preload("res://Assets/Pieces/Black/knight_black.png")
+		BISHOP_BLACK = preload("res://Assets/Pieces/Black/bishop_black.png")
+		ROOK_BLACK = preload("res://Assets/Pieces/Black/rook_black.png")
+		QUEEN_BLACK = preload("res://Assets/Pieces/Black/queen_black.png")
+		KING_BLACK = preload("res://Assets/Pieces/Black/king_black.png")
+	if GlobalValue.GodSelectedPlayer2 == "GodOfDeath":
+		PAWN_BLACK = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Pion.png")
+		KNIGHT_BLACK = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Cavalier.png")
+		BISHOP_BLACK = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Fou.png")
+		ROOK_BLACK = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Tour.png")
+		QUEEN_BLACK = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Reine.png")
+		KING_BLACK = preload("res://Assets/Gods/GodofDeath/Pieces/Base pièce - Roi.png")
 	
 	for i in BOARD_SIZE:
 		for j in BOARD_SIZE:
@@ -117,7 +155,6 @@ func display_board():
 				3: holder.texture = BISHOP_WHITE
 				2: holder.texture = KNIGHT_WHITE
 				1: holder.texture = PAWN_WHITE
-				
 
 
 func show_options():
@@ -200,6 +237,12 @@ func set_move(var2, var1):
 			if !just_now: en_passant = null
 			board[var2][var1] = board[selected_piece.x][selected_piece.y]
 			board[selected_piece.x][selected_piece.y] = 0
+			print(board)
+			print(boardBeforeMove)
+			DetectingPieceTaken()
+			boardBeforeMove = []
+			for row in board:
+				boardBeforeMove.append(row.duplicate(true))
 			white = !white
 			threefold_position(board)
 			display_board()
@@ -540,4 +583,18 @@ func threefold_position(var1 : Array):
 	unique_board_moves.append(var1.duplicate(true))
 	amount_of_same.append(1)
 	
+
+func DetectingPieceTaken():
+	for i in BOARD_SIZE:
+		for j in BOARD_SIZE:
+			if board[i][j] != boardBeforeMove[i][j]:
+				if board[i][j] == 0:
+					continue
+				elif boardBeforeMove[i][j] != 0:
+					deadPiece.append(boardBeforeMove[i][j])
+					print("Piece Morte: ",deadPiece)
+					break
+			else:
+				continue
+
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://d0rxatcqba02x"]
+[gd_scene load_steps=82 format=3 uid="uid://d0rxatcqba02x"]
 
 [ext_resource type="Texture2D" uid="uid://de38f5jhxb4co" path="res://Assets/Menu/MenuMultijoueurAccueilFondEcran.png" id="1_3calr"]
 [ext_resource type="Script" path="res://Script/BackgroundConnection.gd" id="2_4i6jd"]
@@ -68,6 +68,18 @@
 [ext_resource type="Script" path="res://Script/BackgroundMenu.gd" id="65_yy14o"]
 [ext_resource type="Texture2D" uid="uid://dhbhjmptldaro" path="res://Assets/Menu/SelectGodsClan.png" id="67_8pww7"]
 [ext_resource type="Script" path="res://Script/BackgroundChooseGods.gd" id="68_wthse"]
+[ext_resource type="Texture2D" uid="uid://4353ndri2sne" path="res://Assets/Pieces/White/pawn_white.png" id="69_tkoc3"]
+[ext_resource type="Texture2D" uid="uid://dx867rhkwxu1e" path="res://Assets/Pieces/White/knight_white.png" id="70_c31km"]
+[ext_resource type="Texture2D" uid="uid://dmpp33s47v3wi" path="res://Assets/Pieces/White/bishop_white.png" id="71_xeker"]
+[ext_resource type="Texture2D" uid="uid://c0p3k5eqa0m3l" path="res://Assets/Pieces/White/rook_white.png" id="72_3iwgf"]
+[ext_resource type="Texture2D" uid="uid://ck6pnkn6o00mg" path="res://Assets/Pieces/White/queen_white.png" id="73_elrpa"]
+[ext_resource type="Texture2D" uid="uid://ckeux6wc2rvey" path="res://Assets/Pieces/White/king_white.png" id="74_3ytqx"]
+[ext_resource type="Texture2D" uid="uid://bhpnasv0crt3s" path="res://Assets/Pieces/Black/pawn_black.png" id="75_m0enw"]
+[ext_resource type="Texture2D" uid="uid://vk3o7v8d1qb0" path="res://Assets/Pieces/Black/knight_black.png" id="76_78d0r"]
+[ext_resource type="Texture2D" uid="uid://cwqpewalmaa4n" path="res://Assets/Pieces/Black/bishop_black.png" id="77_b5pi1"]
+[ext_resource type="Texture2D" uid="uid://b3a03f2gds5kq" path="res://Assets/Pieces/Black/rook_black.png" id="78_gwm0b"]
+[ext_resource type="Texture2D" uid="uid://dk6ik62ajlekr" path="res://Assets/Pieces/Black/queen_black.png" id="79_7o1s1"]
+[ext_resource type="Texture2D" uid="uid://woqjkyhcxmpb" path="res://Assets/Pieces/Black/king_black.png" id="80_40snh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eu8ee"]
 animations = [{
@@ -327,15 +339,113 @@ position = Vector2(401, -400)
 texture = ExtResource("67_8pww7")
 script = ExtResource("68_wthse")
 
-[node name="Validate" type="Button" parent="BackgroundChooseGods"]
+[node name="ButtonValidate" type="Button" parent="BackgroundChooseGods"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -147.0
 offset_top = 448.0
 offset_right = 160.0
 offset_bottom = 530.0
 
+[node name="ButtonGodofDeath" type="Button" parent="BackgroundChooseGods"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -186.0
+offset_top = -231.0
+offset_right = -82.0
+offset_bottom = -124.0
+
+[node name="AnyPower" type="Label" parent="BackgroundChooseGods"]
+offset_left = 227.0
+offset_top = 270.0
+offset_right = 332.0
+offset_bottom = 374.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "Sans 
+Pouvoir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonAnyPower" type="Button" parent="BackgroundChooseGods"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 229.0
+offset_top = 274.0
+offset_right = 330.0
+offset_bottom = 373.0
+
+[node name="Player1" type="Control" parent="BackgroundChooseGods"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -960.0
+offset_top = -539.0
+offset_right = -370.0
+offset_bottom = 542.0
+
+[node name="Pawn" type="Sprite2D" parent="BackgroundChooseGods/Player1" groups=["PiecePlayer1"]]
+position = Vector2(502, 351)
+texture = ExtResource("69_tkoc3")
+
+[node name="Knight" type="Sprite2D" parent="BackgroundChooseGods/Player1" groups=["PiecePlayer1"]]
+position = Vector2(503, 455)
+texture = ExtResource("70_c31km")
+
+[node name="Bishop" type="Sprite2D" parent="BackgroundChooseGods/Player1" groups=["PiecePlayer1"]]
+position = Vector2(502, 561)
+texture = ExtResource("71_xeker")
+
+[node name="Rook" type="Sprite2D" parent="BackgroundChooseGods/Player1" groups=["PiecePlayer1"]]
+position = Vector2(501, 663)
+texture = ExtResource("72_3iwgf")
+
+[node name="Queen" type="Sprite2D" parent="BackgroundChooseGods/Player1" groups=["PiecePlayer1"]]
+position = Vector2(501, 768)
+texture = ExtResource("73_elrpa")
+
+[node name="King" type="Sprite2D" parent="BackgroundChooseGods/Player1" groups=["PiecePlayer1"]]
+position = Vector2(501, 872)
+texture = ExtResource("74_3ytqx")
+
+[node name="Player2" type="Control" parent="BackgroundChooseGods"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 370.0
+offset_top = -543.0
+offset_right = 961.0
+offset_bottom = 538.0
+
+[node name="Pawn" type="Sprite2D" parent="BackgroundChooseGods/Player2" groups=["PiecePlayer2"]]
+position = Vector2(96, 356)
+texture = ExtResource("75_m0enw")
+
+[node name="Knight" type="Sprite2D" parent="BackgroundChooseGods/Player2" groups=["PiecePlayer2"]]
+position = Vector2(99, 461)
+texture = ExtResource("76_78d0r")
+
+[node name="Bishop" type="Sprite2D" parent="BackgroundChooseGods/Player2" groups=["PiecePlayer2"]]
+position = Vector2(96, 562)
+texture = ExtResource("77_b5pi1")
+
+[node name="Rook" type="Sprite2D" parent="BackgroundChooseGods/Player2" groups=["PiecePlayer2"]]
+position = Vector2(97, 669)
+texture = ExtResource("78_gwm0b")
+
+[node name="Queen" type="Sprite2D" parent="BackgroundChooseGods/Player2" groups=["PiecePlayer2"]]
+position = Vector2(98, 772)
+texture = ExtResource("79_7o1s1")
+
+[node name="King" type="Sprite2D" parent="BackgroundChooseGods/Player2" groups=["PiecePlayer2"]]
+position = Vector2(97, 874)
+texture = ExtResource("80_40snh")
+
 [connection signal="mouse_entered" from="BackgroundConnection/ButtonPlayAnimated/ButtonPlay" to="BackgroundConnection" method="_on_button_play_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundConnection/ButtonPlayAnimated/ButtonPlay" to="BackgroundConnection" method="_on_button_play_mouse_exited"]
 [connection signal="pressed" from="BackgroundConnection/ButtonPlayAnimated/ButtonPlay" to="BackgroundConnection" method="_on_button_play_pressed"]
 [connection signal="pressed" from="BackgroundMenu/Create" to="BackgroundMenu" method="_on_create_pressed"]
-[connection signal="pressed" from="BackgroundChooseGods/Validate" to="BackgroundChooseGods" method="_on_validate_pressed"]
+[connection signal="pressed" from="BackgroundChooseGods/ButtonValidate" to="BackgroundChooseGods" method="_on_validate_pressed"]
+[connection signal="mouse_entered" from="BackgroundChooseGods/ButtonGodofDeath" to="BackgroundChooseGods" method="_on_button_godof_death_mouse_entered"]
+[connection signal="mouse_exited" from="BackgroundChooseGods/ButtonGodofDeath" to="BackgroundChooseGods" method="_on_button_godof_death_mouse_exited"]
+[connection signal="pressed" from="BackgroundChooseGods/ButtonGodofDeath" to="BackgroundChooseGods" method="_on_button_godof_death_pressed"]
+[connection signal="mouse_entered" from="BackgroundChooseGods/ButtonAnyPower" to="BackgroundChooseGods" method="_on_button_any_power_mouse_entered"]
+[connection signal="mouse_exited" from="BackgroundChooseGods/ButtonAnyPower" to="BackgroundChooseGods" method="_on_button_any_power_mouse_exited"]
+[connection signal="pressed" from="BackgroundChooseGods/ButtonAnyPower" to="BackgroundChooseGods" method="_on_button_any_power_pressed"]
