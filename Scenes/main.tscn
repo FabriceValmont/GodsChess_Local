@@ -1,214 +1,341 @@
-[gd_scene load_steps=37 format=3 uid="uid://d0rxatcqba02x"]
+[gd_scene load_steps=70 format=3 uid="uid://d0rxatcqba02x"]
 
-[ext_resource type="Texture2D" uid="uid://dx867rhkwxu1e" path="res://Assets/knight_white.png" id="1_pnf80"]
-[ext_resource type="PackedScene" uid="uid://88n64osg4qwf" path="res://Scenes/board.tscn" id="1_uqc25"]
-[ext_resource type="Script" path="res://Scenes/chess.gd" id="2_2fdk4"]
-[ext_resource type="Texture2D" uid="uid://dmpp33s47v3wi" path="res://Assets/bishop_white.png" id="2_f4wsu"]
-[ext_resource type="Texture2D" uid="uid://c0p3k5eqa0m3l" path="res://Assets/rook_white.png" id="3_ektjo"]
-[ext_resource type="Texture2D" uid="uid://ck6pnkn6o00mg" path="res://Assets/queen_white.png" id="4_j36oo"]
-[ext_resource type="Texture2D" uid="uid://vk3o7v8d1qb0" path="res://Assets/knight_black.png" id="5_ke7rj"]
-[ext_resource type="Texture2D" uid="uid://cwqpewalmaa4n" path="res://Assets/bishop_black.png" id="6_srpj7"]
-[ext_resource type="Texture2D" uid="uid://b3a03f2gds5kq" path="res://Assets/rook_black.png" id="7_mjxk1"]
-[ext_resource type="Texture2D" uid="uid://dk6ik62ajlekr" path="res://Assets/queen_black.png" id="8_l3ebc"]
+[ext_resource type="Texture2D" uid="uid://de38f5jhxb4co" path="res://Assets/Menu/MenuMultijoueurAccueilFondEcran.png" id="1_3calr"]
+[ext_resource type="Script" path="res://Script/BackgroundConnection.gd" id="2_4i6jd"]
+[ext_resource type="Texture2D" uid="uid://bufeqogr1cqgl" path="res://Assets/Gif/HoverPlay/HoverPlay_000.png" id="2_w2oty"]
+[ext_resource type="Texture2D" uid="uid://cge8bn7yc83ss" path="res://Assets/Gif/HoverPlay/HoverPlay_001.png" id="3_pfn5x"]
+[ext_resource type="Texture2D" uid="uid://d2yc4thmuo3qk" path="res://Assets/Gif/HoverPlay/HoverPlay_002.png" id="4_oivd0"]
+[ext_resource type="Texture2D" uid="uid://c4ulwgy24kiwy" path="res://Assets/Gif/HoverPlay/HoverPlay_003.png" id="5_ta6tb"]
+[ext_resource type="Texture2D" uid="uid://dc282eta26ums" path="res://Assets/Gif/HoverPlay/HoverPlay_004.png" id="6_v0jhe"]
+[ext_resource type="Texture2D" uid="uid://b7rxjobqvok0u" path="res://Assets/Gif/HoverPlay/HoverPlay_005.png" id="7_yh3he"]
+[ext_resource type="Texture2D" uid="uid://cmhomhxerxfn6" path="res://Assets/Gif/HoverPlay/HoverPlay_006.png" id="8_wb6iy"]
+[ext_resource type="Texture2D" uid="uid://bi537f8iv7uad" path="res://Assets/Gif/HoverPlay/HoverPlay_007.png" id="9_1ahbx"]
+[ext_resource type="Texture2D" uid="uid://beyc1bfixkffj" path="res://Assets/Gif/HoverPlay/HoverPlay_008.png" id="10_wdhp2"]
+[ext_resource type="Texture2D" uid="uid://bwwniuvmpwj45" path="res://Assets/Gif/HoverPlay/HoverPlay_009.png" id="11_47m5x"]
+[ext_resource type="Texture2D" uid="uid://gsbskxd8t3gq" path="res://Assets/Gif/HoverPlay/HoverPlay_010.png" id="12_xgosy"]
+[ext_resource type="Texture2D" uid="uid://lamoye0h10kd" path="res://Assets/Gif/HoverPlay/HoverPlay_011.png" id="13_s8pke"]
+[ext_resource type="Texture2D" uid="uid://bbtymstb4a4xf" path="res://Assets/Gif/HoverPlay/HoverPlay_012.png" id="14_ypp4l"]
+[ext_resource type="Texture2D" uid="uid://bgviayi51epme" path="res://Assets/Gif/HoverPlay/HoverPlay_013.png" id="15_nckb2"]
+[ext_resource type="Texture2D" uid="uid://cgjjoch4fj7sl" path="res://Assets/Gif/HoverPlay/HoverPlay_014.png" id="16_7uaom"]
+[ext_resource type="Texture2D" uid="uid://dbn26drawltst" path="res://Assets/Gif/HoverPlay/HoverPlay_015.png" id="17_0nk16"]
+[ext_resource type="Texture2D" uid="uid://0tui02vob1bc" path="res://Assets/Gif/HoverPlay/HoverPlay_016.png" id="18_skll5"]
+[ext_resource type="Texture2D" uid="uid://qvy2iudpongy" path="res://Assets/Gif/HoverPlay/HoverPlay_017.png" id="19_ngamv"]
+[ext_resource type="Texture2D" uid="uid://xdn31tygqwku" path="res://Assets/Gif/HoverPlay/HoverPlay_018.png" id="20_ngvlr"]
+[ext_resource type="Texture2D" uid="uid://cnicpei5kgd20" path="res://Assets/Gif/HoverPlay/HoverPlay_019.png" id="21_2enrh"]
+[ext_resource type="Texture2D" uid="uid://debb70b4aplbn" path="res://Assets/Gif/HoverPlay/HoverPlay_020.png" id="22_wts5v"]
+[ext_resource type="Texture2D" uid="uid://busan5264pq01" path="res://Assets/Gif/HoverPlay/HoverPlay_021.png" id="23_1ajlg"]
+[ext_resource type="Texture2D" uid="uid://ci2trt63scvv2" path="res://Assets/Gif/HoverPlay/HoverPlay_022.png" id="24_670j3"]
+[ext_resource type="Texture2D" uid="uid://f6v34ievv6ha" path="res://Assets/Gif/HoverPlay/HoverPlay_023.png" id="25_l68q2"]
+[ext_resource type="Texture2D" uid="uid://croueanpefmal" path="res://Assets/Gif/HoverPlay/HoverPlay_024.png" id="26_cvmbu"]
+[ext_resource type="Texture2D" uid="uid://c8kfk085vjbpf" path="res://Assets/Gif/HoverPlay/HoverPlay_025.png" id="27_5vghs"]
+[ext_resource type="Texture2D" uid="uid://bycg2xgln62p6" path="res://Assets/Gif/HoverPlay/HoverPlay_026.png" id="28_etw57"]
+[ext_resource type="Texture2D" uid="uid://cmwkalue00rme" path="res://Assets/Gif/HoverPlay/HoverPlay_027.png" id="29_smfwr"]
+[ext_resource type="Texture2D" uid="uid://c5i4cdykjromq" path="res://Assets/Gif/HoverPlay/HoverPlay_028.png" id="30_usue7"]
+[ext_resource type="Texture2D" uid="uid://cc12olswrru0n" path="res://Assets/Gif/HoverPlay/HoverPlay_029.png" id="31_csyxc"]
+[ext_resource type="Texture2D" uid="uid://vj63dw3amyhs" path="res://Assets/Gif/HoverPlay/HoverPlay_030.png" id="32_7sw7s"]
+[ext_resource type="Texture2D" uid="uid://dk01evlxb6ac2" path="res://Assets/Gif/HoverPlay/HoverPlay_031.png" id="33_ognu6"]
+[ext_resource type="Texture2D" uid="uid://dbtqprbpwrwsx" path="res://Assets/Gif/HoverPlay/HoverPlay_032.png" id="34_3f3g5"]
+[ext_resource type="Texture2D" uid="uid://cqj63f2gprd1f" path="res://Assets/Gif/HoverPlay/HoverPlay_033.png" id="35_0w86b"]
+[ext_resource type="Texture2D" uid="uid://bav62cvr00x25" path="res://Assets/Gif/HoverPlay/HoverPlay_034.png" id="36_tb1la"]
+[ext_resource type="Texture2D" uid="uid://d2dqw70ps7qdu" path="res://Assets/Gif/HoverPlay/HoverPlay_035.png" id="37_e4u4b"]
+[ext_resource type="Texture2D" uid="uid://hv3w5lq2mh40" path="res://Assets/Gif/HoverPlay/HoverPlay_036.png" id="38_kat44"]
+[ext_resource type="Texture2D" uid="uid://b2v5svnykicwe" path="res://Assets/Gif/HoverPlay/HoverPlay_037.png" id="39_mg68o"]
+[ext_resource type="Texture2D" uid="uid://ba5woryettrbp" path="res://Assets/Gif/HoverPlay/HoverPlay_038.png" id="40_5v3bh"]
+[ext_resource type="Texture2D" uid="uid://bxww34imv2rjf" path="res://Assets/Gif/HoverPlay/HoverPlay_039.png" id="41_eokh8"]
+[ext_resource type="Texture2D" uid="uid://bppr1iavrffvf" path="res://Assets/Gif/HoverPlay/HoverPlay_040.png" id="42_d36wc"]
+[ext_resource type="Texture2D" uid="uid://d121ntxola3gm" path="res://Assets/Gif/HoverPlay/HoverPlay_041.png" id="43_eqvpt"]
+[ext_resource type="Texture2D" uid="uid://cdfpknwbq2fp" path="res://Assets/Gif/HoverPlay/HoverPlay_042.png" id="44_2np2l"]
+[ext_resource type="Texture2D" uid="uid://dim1objk6ayc1" path="res://Assets/Gif/HoverPlay/HoverPlay_043.png" id="45_brali"]
+[ext_resource type="Texture2D" uid="uid://b1hgy8e75205g" path="res://Assets/Gif/HoverPlay/HoverPlay_044.png" id="46_704h3"]
+[ext_resource type="Texture2D" uid="uid://dbmao4hbnwg2n" path="res://Assets/Gif/HoverPlay/HoverPlay_045.png" id="47_lohck"]
+[ext_resource type="Texture2D" uid="uid://dukibvurr3pd1" path="res://Assets/Gif/HoverPlay/HoverPlay_046.png" id="48_xn37u"]
+[ext_resource type="Texture2D" uid="uid://cdtfrmktr4wci" path="res://Assets/Gif/HoverPlay/HoverPlay_047.png" id="49_t4pne"]
+[ext_resource type="Texture2D" uid="uid://ba4nijoppjyly" path="res://Assets/Gif/HoverPlay/HoverPlay_048.png" id="50_bgq0n"]
+[ext_resource type="Texture2D" uid="uid://cw82kxmoxsih1" path="res://Assets/Gif/HoverPlay/HoverPlay_049.png" id="51_uc6b3"]
+[ext_resource type="Texture2D" uid="uid://c5strevho6kp1" path="res://Assets/Gif/HoverPlay/HoverPlay_050.png" id="52_cu3tj"]
+[ext_resource type="Texture2D" uid="uid://cbq0eskapknlr" path="res://Assets/Gif/HoverPlay/HoverPlay_051.png" id="53_ghqso"]
+[ext_resource type="Texture2D" uid="uid://bctgfefix13yv" path="res://Assets/Gif/HoverPlay/HoverPlay_052.png" id="54_bdjjf"]
+[ext_resource type="Texture2D" uid="uid://d1anbkw54xwtk" path="res://Assets/Gif/HoverPlay/HoverPlay_053.png" id="55_dviw0"]
+[ext_resource type="Texture2D" uid="uid://cmil06gp5jugf" path="res://Assets/Gif/HoverPlay/HoverPlay_054.png" id="56_4kv4s"]
+[ext_resource type="Texture2D" uid="uid://duf8rge04pn6u" path="res://Assets/Gif/HoverPlay/HoverPlay_055.png" id="57_bctdi"]
+[ext_resource type="Texture2D" uid="uid://8qla3jipkyll" path="res://Assets/Gif/HoverPlay/HoverPlay_056.png" id="58_8tcoi"]
+[ext_resource type="Texture2D" uid="uid://cv1l4f6tuq7yt" path="res://Assets/Gif/HoverPlay/HoverPlay_057.png" id="59_ondfs"]
+[ext_resource type="Texture2D" uid="uid://bneca0jb7rrey" path="res://Assets/Gif/HoverPlay/HoverPlay_058.png" id="60_svyuh"]
+[ext_resource type="Texture2D" uid="uid://c2s8oxq0vgt2d" path="res://Assets/Gif/HoverPlay/HoverPlay_059.png" id="61_rk6rt"]
+[ext_resource type="FontFile" uid="uid://dhnnqyjsc2vqu" path="res://Assets/Font/Forgotten.ttf" id="62_5rtv5"]
+[ext_resource type="Texture2D" uid="uid://d347s5l1lukog" path="res://Assets/Menu/BackgroundGodchess.png" id="63_yxxdm"]
+[ext_resource type="Texture2D" uid="uid://dywe2skccxrfn" path="res://Assets/Menu/ModCustomizedGame.png" id="65_xgdtl"]
+[ext_resource type="Script" path="res://Script/BackgroundMenu.gd" id="65_yy14o"]
+[ext_resource type="Texture2D" uid="uid://dhbhjmptldaro" path="res://Assets/Menu/SelectGodsClan.png" id="67_8pww7"]
+[ext_resource type="Script" path="res://Script/BackgroundChooseGods.gd" id="68_wthse"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plcxp"]
-texture = ExtResource("1_pnf80")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ileeo"]
-texture = ExtResource("1_pnf80")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3d5nh"]
-texture = ExtResource("1_pnf80")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqh1b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4tgmv"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e75tw"]
-texture = ExtResource("2_f4wsu")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rd2kt"]
-texture = ExtResource("2_f4wsu")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1lx4"]
-texture = ExtResource("2_f4wsu")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2f8pi"]
-texture = ExtResource("3_ektjo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ht818"]
-texture = ExtResource("3_ektjo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rk1yd"]
-texture = ExtResource("3_ektjo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xi3h"]
-texture = ExtResource("4_j36oo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i8ffj"]
-texture = ExtResource("4_j36oo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e626u"]
-texture = ExtResource("4_j36oo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_euako"]
-texture = ExtResource("5_ke7rj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mygkf"]
-texture = ExtResource("5_ke7rj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xf0r1"]
-texture = ExtResource("5_ke7rj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2177p"]
-texture = ExtResource("6_srpj7")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ppnj"]
-texture = ExtResource("6_srpj7")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sssae"]
-texture = ExtResource("6_srpj7")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjqnf"]
-texture = ExtResource("7_mjxk1")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yw36b"]
-texture = ExtResource("7_mjxk1")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_unlof"]
-texture = ExtResource("7_mjxk1")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8l7nh"]
-texture = ExtResource("8_l3ebc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wbdw"]
-texture = ExtResource("8_l3ebc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_387lx"]
-texture = ExtResource("8_l3ebc")
+[sub_resource type="SpriteFrames" id="SpriteFrames_eu8ee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w2oty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pfn5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oivd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ta6tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v0jhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yh3he")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wb6iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1ahbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wdhp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_47m5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xgosy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_s8pke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ypp4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nckb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7uaom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0nk16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_skll5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ngamv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ngvlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2enrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wts5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1ajlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_670j3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_l68q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_cvmbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5vghs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_etw57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_smfwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_usue7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_csyxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_7sw7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ognu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_3f3g5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0w86b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_tb1la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_e4u4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_kat44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_mg68o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_5v3bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_eokh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_d36wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_eqvpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_2np2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_brali")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_704h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_lohck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_xn37u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_t4pne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_bgq0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_uc6b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_cu3tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ghqso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bdjjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_dviw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_4kv4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_bctdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_8tcoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ondfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_svyuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_rk6rt")
+}],
+"loop": true,
+"name": &"HoverPlay",
+"speed": 30.0
+}]
 
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(400, -400)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="white_pieces" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -50.0
-offset_right = 200.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="2" type="Button" parent="CanvasLayer/white_pieces" groups=["white_pieces"]]
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 100.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_plcxp")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ileeo")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_3d5nh")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kqh1b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4tgmv")
-
-[node name="3" type="Button" parent="CanvasLayer/white_pieces" groups=["white_pieces"]]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 200.0
-offset_bottom = 100.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_e75tw")
-theme_override_styles/hover = SubResource("StyleBoxTexture_rd2kt")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_r1lx4")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kqh1b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4tgmv")
-
-[node name="4" type="Button" parent="CanvasLayer/white_pieces" groups=["white_pieces"]]
-layout_mode = 0
-offset_left = 200.0
-offset_right = 300.0
-offset_bottom = 100.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_2f8pi")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ht818")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_rk1yd")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kqh1b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4tgmv")
-
-[node name="5" type="Button" parent="CanvasLayer/white_pieces" groups=["white_pieces"]]
-layout_mode = 0
-offset_left = 300.0
-offset_right = 400.0
-offset_bottom = 100.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_0xi3h")
-theme_override_styles/hover = SubResource("StyleBoxTexture_i8ffj")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_e626u")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kqh1b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4tgmv")
-
-[node name="black_pieces" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -50.0
-offset_right = 200.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="2" type="Button" parent="CanvasLayer/black_pieces" groups=["black_pieces"]]
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 100.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_euako")
-theme_override_styles/hover = SubResource("StyleBoxTexture_mygkf")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_xf0r1")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kqh1b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4tgmv")
-
-[node name="3" type="Button" parent="CanvasLayer/black_pieces" groups=["black_pieces"]]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 200.0
-offset_bottom = 100.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_2177p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_4ppnj")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_sssae")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kqh1b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4tgmv")
-
-[node name="4" type="Button" parent="CanvasLayer/black_pieces" groups=["black_pieces"]]
-layout_mode = 0
-offset_left = 200.0
-offset_right = 300.0
-offset_bottom = 100.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_bjqnf")
-theme_override_styles/hover = SubResource("StyleBoxTexture_yw36b")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_unlof")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kqh1b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4tgmv")
-
-[node name="5" type="Button" parent="CanvasLayer/black_pieces" groups=["black_pieces"]]
-layout_mode = 0
-offset_left = 300.0
-offset_right = 400.0
-offset_bottom = 100.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_8l7nh")
-theme_override_styles/hover = SubResource("StyleBoxTexture_2wbdw")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_387lx")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kqh1b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4tgmv")
-
-[node name="Board" parent="." instance=ExtResource("1_uqc25")]
-visible = false
+[node name="BackgroundConnection" type="Sprite2D" parent="."]
 position = Vector2(400, -400)
-script = ExtResource("2_2fdk4")
+texture = ExtResource("1_3calr")
+script = ExtResource("2_4i6jd")
+
+[node name="ButtonPlayAnimated" type="Control" parent="BackgroundConnection"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedHoverPlay" type="AnimatedSprite2D" parent="BackgroundConnection/ButtonPlayAnimated"]
+position = Vector2(4, 300)
+sprite_frames = SubResource("SpriteFrames_eu8ee")
+animation = &"HoverPlay"
+
+[node name="PlayText" type="Label" parent="BackgroundConnection/ButtonPlayAnimated"]
+layout_mode = 0
+offset_left = -107.0
+offset_top = 242.0
+offset_right = 117.0
+offset_bottom = 348.0
+theme_override_fonts/font = ExtResource("62_5rtv5")
+theme_override_font_sizes/font_size = 100
+text = "Jouer"
+
+[node name="ButtonPlay" type="Button" parent="BackgroundConnection/ButtonPlayAnimated"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -113.0
+offset_top = 217.0
+offset_right = 124.0
+offset_bottom = 377.0
+
+[node name="BackgroundMenu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(400, -399)
+texture = ExtResource("63_yxxdm")
+script = ExtResource("65_yy14o")
+
+[node name="LauchGame" type="Sprite2D" parent="BackgroundMenu"]
+texture = ExtResource("65_xgdtl")
+
+[node name="Create" type="Button" parent="BackgroundMenu"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -81.0
+offset_top = 150.0
+offset_right = 95.0
+offset_bottom = 233.0
+
+[node name="Play" type="Label" parent="BackgroundMenu"]
+offset_left = -100.0
+offset_top = -545.0
+offset_right = 124.0
+offset_bottom = -439.0
+theme_override_fonts/font = ExtResource("62_5rtv5")
+theme_override_font_sizes/font_size = 100
+text = "Jouer"
+
+[node name="BackgroundChooseGods" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(401, -400)
+texture = ExtResource("67_8pww7")
+script = ExtResource("68_wthse")
+
+[node name="Validate" type="Button" parent="BackgroundChooseGods"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -147.0
+offset_top = 448.0
+offset_right = 160.0
+offset_bottom = 530.0
+
+[connection signal="mouse_entered" from="BackgroundConnection/ButtonPlayAnimated/ButtonPlay" to="BackgroundConnection" method="_on_button_play_mouse_entered"]
+[connection signal="mouse_exited" from="BackgroundConnection/ButtonPlayAnimated/ButtonPlay" to="BackgroundConnection" method="_on_button_play_mouse_exited"]
+[connection signal="pressed" from="BackgroundConnection/ButtonPlayAnimated/ButtonPlay" to="BackgroundConnection" method="_on_button_play_pressed"]
+[connection signal="pressed" from="BackgroundMenu/Create" to="BackgroundMenu" method="_on_create_pressed"]
+[connection signal="pressed" from="BackgroundChooseGods/Validate" to="BackgroundChooseGods" method="_on_validate_pressed"]
